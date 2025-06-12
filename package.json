@@ -1,0 +1,14 @@
+{
+  "name": "stremio-top-streaming-italia",
+  "version": "1.0.0",
+  "description": "Addon Stremio per contenuti più visti in Italia",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "axios": "^1.4.0"
+  }
+}
