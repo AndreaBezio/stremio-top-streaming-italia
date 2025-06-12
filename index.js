@@ -444,6 +444,8 @@ setInterval(() => {
 }, 25 * 60 * 1000); // Ogni 25 minuti
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Top Streaming Italia COMPLETO (6 piattaforme) attivo su porta ${PORT}`);
+    console.log(`🔑 Trakt API: ${process.env.TRAKT_CLIENT_ID ? 'CONFIGURATA' : 'MANCANTE'}`);
+    console.log(`🔑 TMDb API: ${process.env.TMDB_API_KEY ? 'CONFIGURATA' : 'MANCANTE'}`);
 });
