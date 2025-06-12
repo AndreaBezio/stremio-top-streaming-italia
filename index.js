@@ -3,6 +3,22 @@ const cors = require('cors');
 const axios = require('axios');
 
 const app = express();
+
+// DEBUG TEMPORANEO - Rimuovere dopo
+console.log('🔍 DEBUG - Tutte le env variables:');
+console.log('PORT:', process.env.PORT);
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('TRAKT_CLIENT_ID presente:', !!process.env.TRAKT_CLIENT_ID);
+console.log('TMDB_API_KEY presente:', !!process.env.TMDB_API_KEY);
+console.log('TRAKT_CLIENT_ID lunghezza:', process.env.TRAKT_CLIENT_ID?.length);
+console.log('TMDB_API_KEY lunghezza:', process.env.TMDB_API_KEY?.length);
+
+// Se sono undefined, vediamo cosa c'è
+if (!process.env.TRAKT_CLIENT_ID) {
+    console.log('⚠️ TRAKT_CLIENT_ID è undefined!');
+    console.log('Tutte le env che contengono TRAKT:', Object.keys(process.env).filter(k => k.includes('TRAKT')));
+}
+
 app.use(cors());
 
 const manifest = {
